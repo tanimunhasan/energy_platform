@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  color: #eef8f2;
+  background: #07130f;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 80% 0%, #16372b 0, #07130f 38%); }
+a { color: inherit; text-decoration: none; }
+
+.app-shell { min-height: 100vh; display: grid; grid-template-columns: 248px 1fr; }
+.sidebar { position: sticky; top: 0; height: 100vh; padding: 32px 24px; border-right: 1px solid rgba(255,255,255,.08); background: rgba(4,13,10,.74); backdrop-filter: blur(18px); }
+.brand-mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: linear-gradient(135deg,#f5bd34,#f27b32); color: #251600; font-size: 24px; box-shadow: 0 12px 28px rgba(245,189,52,.18); float: left; margin-right: 12px; }
+.brand-copy { min-height: 52px; display: flex; flex-direction: column; justify-content: center; }
+.brand-copy strong { font: 800 20px/1 "Manrope"; }
+.brand-copy small { margin-top: 5px; color: #80958a; font-size: 11px; }
+.sidebar nav { margin-top: 56px; display: grid; gap: 9px; }
+.sidebar nav a { padding: 12px 14px; color: #8fa399; border-radius: 10px; font-weight: 600; font-size: 14px; }
+.sidebar nav a:hover, .sidebar nav a.active { color: #eafff2; background: rgba(56,211,159,.1); }
+.sidebar nav a.active { box-shadow: inset 3px 0 #38d39f; }
+.site-card { position: absolute; left: 24px; right: 24px; bottom: 30px; padding: 16px; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; background: rgba(255,255,255,.035); display: grid; gap: 5px; }
+.site-card span { color: #38d39f; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.site-card strong { font-size: 14px; }
+.site-card small { color: #7d9187; font-size: 11px; }
+
+.main-content { width: min(1520px,100%); padding: 38px 44px 24px; }
+.topbar { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; margin-bottom: 30px; }
+.eyebrow { color: #38d39f !important; letter-spacing: .15em; font-weight: 700; font-size: 10px !important; }
+.topbar h1 { margin: 7px 0 5px; font: 700 clamp(25px,3vw,34px)/1.15 "Manrope"; }
+.topbar p { margin: 0; color: #8da197; font-size: 14px; }
+.header-status { display: flex; align-items: center; gap: 10px; padding-top: 8px; }
+.demo-pill, .online-pill { border: 1px solid rgba(255,255,255,.09); border-radius: 99px; padding: 8px 12px; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.demo-pill { color: #f5bd34; background: rgba(245,189,52,.08); }
+.online-pill { color: #b6c7bf; background: rgba(255,255,255,.04); }
+.online-pill i { display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: #f06b61; }
+.online-pill.online i { background: #38d39f; box-shadow: 0 0 0 4px rgba(56,211,159,.12); }
+
+.metrics-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin-bottom: 16px; }
+.metric-card, .panel { border: 1px solid rgba(255,255,255,.075); background: linear-gradient(145deg,rgba(255,255,255,.056),rgba(255,255,255,.025)); border-radius: 17px; box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+.metric-card { position: relative; overflow: hidden; padding: 20px; min-height: 142px; }
+.metric-card::after { content:""; position:absolute; width:88px; height:88px; border-radius:50%; right:-35px; top:-38px; background:#38d39f; opacity:.07; }
+.metric-card.amber::after { background:#f5bd34; }
+.metric-card.blue::after { background:#4ea4ff; }
+.metric-label, .panel-heading span { color: #7f968b; letter-spacing: .12em; font-size: 10px; font-weight: 700; }
+.metric-value { margin-top: 23px; font: 700 30px/1 "Manrope"; }
+.metric-value span { color: #84988e; font: 600 13px/1 "DM Sans"; }
+.metric-detail { margin-top: 11px; color: #82968c; font-size: 12px; }
+
+.content-grid { display: grid; grid-template-columns: minmax(0,1.8fr) minmax(300px,.72fr); gap: 16px; margin-bottom: 16px; }
+.content-grid.lower { grid-template-columns: minmax(0,1.45fr) minmax(330px,.75fr); }
+.panel { padding: 22px; min-width: 0; }
+.panel-heading { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.panel-heading h2 { margin: 5px 0 0; font: 700 17px/1.2 "Manrope"; }
+.panel-heading .updated { letter-spacing: 0; text-transform: none; }
+.chart { width: 100%; height: 315px; margin-top: 8px; }
+.lifetime { color:#38d39f; font-size:13px; }
+
+.energy-flow { margin-top: 25px; display: grid; gap: 7px; }
+.flow-node { min-height: 70px; padding: 13px 15px; display: grid; grid-template-columns: 52px 1fr; grid-template-rows: 1fr 1fr; align-items:center; border: 1px solid rgba(255,255,255,.07); border-radius: 13px; background: rgba(0,0,0,.13); }
+.flow-node b { grid-row: 1/3; width: 42px; height: 42px; display:grid; place-items:center; border-radius:12px; background:rgba(56,211,159,.1); color:#38d39f; font-size:13px; }
+.flow-node.sun b { color:#f5bd34; background:rgba(245,189,52,.1); font-size:20px; }
+.flow-node span { color:#e5f2eb; font-size:13px; font-weight:600; }
+.flow-node strong { color:#7f968b; font-size:11px; font-weight:500; }
+.flow-line { height: 18px; width: 2px; background:rgba(56,211,159,.25); margin:0 auto; position:relative; overflow:hidden; }
+.flow-line i { position:absolute; left:0; top:-5px; width:2px; height:7px; background:#38d39f; animation:flow 1.3s infinite linear; }
+@keyframes flow { to { transform:translateY(26px); } }
+
+.health-panel dl { margin: 18px 0 0; }
+.health-panel dl div { display:flex; justify-content:space-between; gap:18px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.055); }
+.health-panel dt { color:#7f9389; font-size:12px; }
+.health-panel dd { margin:0; font-size:12px; font-weight:600; text-align:right; }
+footer { display:flex; justify-content:space-between; color:#63766d; font-size:10px; padding:10px 2px 0; }
+
+.loading-screen { min-height:100vh; display:grid; place-content:center; text-align:center; background:#07130f; color:#9db1a6; }
+.sun-loader { width:42px; height:42px; margin:auto; border-radius:50%; background:#f5bd34; box-shadow:0 0 0 10px rgba(245,189,52,.08); animation:pulse 1.2s infinite ease-in-out; }
+@keyframes pulse { 50% { transform:scale(.78); opacity:.65; } }
+.loading-screen.error h1 { color:#f3f8f5; }
+
+@media (max-width: 1100px) {
+  .app-shell { grid-template-columns: 82px 1fr; }
+  .sidebar { padding:24px 14px; }
+  .brand-mark { float:none; margin:0 auto; }
+  .brand-copy, .site-card { display:none; }
+  .sidebar nav a { font-size:0; height:42px; padding:0; display:grid; place-items:center; }
+  .sidebar nav a::first-letter { font-size:14px; }
+  .metrics-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width: 760px) {
+  .app-shell { display:block; }
+  .sidebar { position:fixed; z-index:10; top:auto; bottom:0; width:100%; height:68px; padding:8px 12px; border:0; border-top:1px solid rgba(255,255,255,.08); }
+  .brand-mark, .brand-copy, .site-card { display:none; }
+  .sidebar nav { margin:0; display:grid; grid-template-columns:repeat(4,1fr); gap:4px; }
+  .sidebar nav a { font-size:10px; height:50px; padding:8px 3px; text-align:center; }
+  .sidebar nav a::first-letter { font-size:inherit; }
+  .main-content { padding:25px 16px 90px; }
+  .topbar { display:block; }
+  .header-status { margin-top:17px; }
+  .metrics-grid, .content-grid, .content-grid.lower { grid-template-columns:1fr; }
+  .metric-card { min-height:125px; }
+  .chart { height:280px; }
+  footer { display:grid; gap:5px; }
+}
+

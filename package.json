@@ -1,0 +1,20 @@
+{
+  "name": "mppt-energy-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/contracts",
+    "worker",
+    "dashboard"
+  ],
+  "scripts": {
+    "build": "npm run build -w @mppt/contracts && npm run build -w @mppt/worker && npm run build -w @mppt/dashboard",
+    "test": "npm run build -w @mppt/contracts && npm run test -w @mppt/worker",
+    "dev:dashboard": "npm run dev -w @mppt/dashboard",
+    "dev:worker": "npm run dev -w @mppt/worker",
+    "simulate": "node simulator/mppt-simulator.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

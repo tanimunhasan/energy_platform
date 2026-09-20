@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mppt-energy-cloud",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-20",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "REPLACE_AFTER_CREATING_HYPERDRIVE",
+      "localConnectionString": "postgresql://postgres:postgres@localhost:5432/mppt_energy"
+    }
+  ]
+}
+
