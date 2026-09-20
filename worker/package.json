@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
+    "lint": "tsc -p tsconfig.json --noEmit",
     "build": "wrangler deploy --dry-run --outdir dist",
     "test": "vitest run"
   },
@@ -21,4 +22,3 @@
     "wrangler": "^4.35.0"
   }
 }
-

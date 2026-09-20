@@ -3,6 +3,7 @@ import type { DailyEnergyPoint, LatestTelemetry } from "@mppt/contracts";
 import type { EChartsOption } from "echarts";
 import EChart from "./EChart";
 import { loadDashboardData } from "./api";
+import AdminApp from "./admin/AdminApp";
 
 type DashboardData = {
   latest: LatestTelemetry;
@@ -61,7 +62,7 @@ function Loading() {
   );
 }
 
-export default function App() {
+function CustomerDashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -244,4 +245,26 @@ export default function App() {
       </main>
     </div>
   );
+}
+
+export default function App() {
+  const [pathname, setPathname] = useState(() => window.location.pathname);
+
+  useEffect(() => {
+    const syncPath = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", syncPath);
+    return () => window.removeEventListener("popstate", syncPath);
+  }, []);
+
+  function navigate(path: string) {
+    window.history.pushState(null, "", path);
+    setPathname(window.location.pathname);
+    window.scrollTo({ top: 0 });
+  }
+
+  if (pathname.startsWith("/admin")) {
+    return <AdminApp pathname={pathname} navigate={navigate} />;
+  }
+
+  return <CustomerDashboard />;
 }

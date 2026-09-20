@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "npm run build -w @mppt/contracts && npm run build -w @mppt/worker && npm run build -w @mppt/dashboard",
-    "test": "npm run build -w @mppt/contracts && npm run test -w @mppt/worker",
+    "lint": "npm run lint -w @mppt/contracts && npm run lint -w @mppt/worker && npm run lint -w @mppt/dashboard",
+    "test": "npm run build -w @mppt/contracts && npm run test -w @mppt/worker && npm run test -w @mppt/dashboard",
     "dev:dashboard": "npm run dev -w @mppt/dashboard",
     "dev:worker": "npm run dev -w @mppt/worker",
     "simulate": "node simulator/mppt-simulator.mjs"
